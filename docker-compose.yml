@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  audio-to-text:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./audio:/app/audio
+    working_dir: /app
+    entrypoint: ["/bin/bash", "/app/convertir_audio.sh"]
